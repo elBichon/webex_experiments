@@ -30,9 +30,10 @@ def upvote():
 	answer = df
 	return answer
 
-
-
 @app.route("/")
 def index():
 	return render_template("index.html")
 
+if __name__ == '__main__':
+	app.debug = True
+	app.run(host='0.0.0.0', port=5000)
