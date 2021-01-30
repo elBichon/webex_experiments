@@ -6,8 +6,17 @@ answer = ""
 
 @app.route("/msg", methods=["POST", "GET"]) 
 def upvote():
-	answer = str(request.form["search"]) + "aaaa1"
-	return str(answer)
+	try:
+		if len(str(request.form["search"])) > 0 and isinstance(request.form["search"],str) == True:
+			answer = str(request.form["search"]) + "aaaa1"
+		else:
+			answer = "invalid input"
+			return answer
+		return str(answer)
+	except:
+		answer = "invalid input"
+		return answer
+
 
 @app.route("/")
 def index():
