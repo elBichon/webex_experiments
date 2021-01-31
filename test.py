@@ -5,7 +5,7 @@ from github import Github
 
 
 # or using an access token
-g = Github("dbdb459a70a7ec73bcb2707d71593f5acf1fe091")
+g = Github("")
 path = "elBichon/webex_experiments"
 
 repo = g.get_repo(path)
