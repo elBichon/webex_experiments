@@ -76,3 +76,25 @@ def generate_answer(query,df):
 	except:
 		return False		
 
+
+def send_get(url, payload=None,js=True):
+    if payload == None:
+        request = requests.get(url, headers=headers)
+    else:
+        request = requests.get(url, headers=headers, params=payload)
+    if js == True:
+        request= request.json()
+    return request
+
+def send_post(url, data):
+    request = requests.post(url, json.dumps(data), headers=headers).json()
+    return request
+
+def help_me():
+    return "Hello! Sure! I can help. Below are the commands that I understand: `Help me` - I will display what I can do. My job is to send you and the rest of your team notifications when something happens inside your repository on pull or push events" 
+
+def greetings():
+    return "Hi, type `Help me` to see what I can do.<br/>" 
+ 
+
+
