@@ -13,6 +13,8 @@ headers = {
     "Authorization": "Bearer " + bearer
 }
 
+#utils library
+
 def send_get(url, payload=None,js=True):
     if payload == None:
         request = requests.get(url, headers=headers)
@@ -24,7 +26,6 @@ def send_get(url, payload=None,js=True):
 
 def send_post(url, data):
     request = requests.post(url, json.dumps(data), headers=headers).json()
-    print(str(request))
     return request
 
 def help_me():
